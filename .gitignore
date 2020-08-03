@@ -1,0 +1,9 @@
+dataset/
+1272_2280_bundle_archive.zip
+cnn_model_fold2.h5
+cnn_model_fold3.h5
+cnn_model_fold4.h5
+cnn_model_fold5.h5
+venv/
+.cph/
+.ipynb_checkpoints/
