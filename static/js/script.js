@@ -14,8 +14,10 @@ clearBtn.addEventListener('click',clearCanvas);
 
 let flag, dot_flag = false,
 prevX, prevY, currX, currY = 0,
-color = 'white', thickness = 2;
+color = 'white', thickness = 8;
 let ctx = canvas.getContext('2d');
+ctx.fillStyle='black';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 function handleDraw(e){
     prevX = currX;
@@ -45,5 +47,27 @@ function clearCanvas(e){
     c_width = canvas.width;
     c_height = canvas.height;
     ctx.clearRect(0, 0, c_width, c_height);
+    ctx.fillStyle='black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+let predictBtn=document.getElementById('predict-btn');
+predictBtn.addEventListener('click',makePrediction);
+function makePrediction(){
+    let dataUrl=canvas.toDataURL("image/png");
+    // console.log(typeof(dataUrl));
+    dataUrl = dataUrl.replace(/^data:image\/(png|jpg);base64,/, "")
+    // dataUrl=dataUrl.replace("data:image/png;base64,","");
+    console.log(dataUrl);
+    let request=new XMLHttpRequest();
+    let data=new FormData();
+    data.append('image-data',dataUrl);
+    request.open("POST","/predict/",true);
+    request.onload=function(){
+        // console.log(request.response);
+        let predictEle=document.getElementById('prediction');
+        predictEle.innerHTML=request.responseText;
+    };
+    request.send(data);
 }
   
