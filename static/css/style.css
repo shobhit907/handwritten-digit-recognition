@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background-color: #848387;
+}
 
 #canvas-container{
     width: 280px;
@@ -18,4 +21,26 @@
 #btns-container{
     display: flex;
     justify-content: space-between;
+}
+
+.pred-table,.pred-table-cell,.pred-table-row{
+    border-radius: 2px;
+    border: 4px solid black;
+}
+
+.pred-table-header{
+    font-weight: bold;
+}
+
+.pred-table-cell{
+    padding: 5px;
+}
+
+.curr-class{
+    background-color: #637fed;
+}
+
+#prediction{
+    display: flex;
+    justify-content: center;    
 }

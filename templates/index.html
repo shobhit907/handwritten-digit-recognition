@@ -12,16 +12,17 @@
 
 <body>
     <div class="container text-center">
-       <h3>Realtime HandWritten Digit Recognition App</h3>
-       <br>
-       <div class="container column" id="canvas-container">
-           <canvas id="canvas"></canvas>
-           <div class="container row" id="btns-container">
-            <button class="btn btn-primary" id="predict-btn">Predict</button>
-            <button class="btn btn-primary" id="clear-btn">Clear</button>
-           </div>
-           <div class="container">Prediction is : <span id="prediction"></span></div>
-       </div>
+        <br><h3>HandWritten Digit Recognition App</h3>
+        <br>
+        <div class="container column" id="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div class="container row" id="btns-container">
+                <button class="btn btn-primary" id="predict-btn">Predict</button>
+                <button class="btn btn-primary" id="clear-btn">Clear</button>
+            </div>
+            <br>
+        </div>
+        <div class="container" id="prediction"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
